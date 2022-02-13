@@ -1,0 +1,297 @@
+@import "__variable";
+
+// ************* loginsignup
+.loginsignup {
+  height: 100%;
+  position: fixed;
+  background: #101010;
+  overflow-y: scroll;
+  right: -100px;
+  top: 0;
+  width: 0px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.6s ease-in-out;
+  z-index: 999;
+  //   padding: 20px;
+  &#active {
+    visibility: visible;
+    opacity: 1;
+    right: 0px;
+    width: 400px;
+    @include phone {
+      width: 100%;
+    }
+  }
+  //heading
+  .heading {
+    border-bottom: 1px solid #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    h3 {
+      color: $golden;
+      font-size: $menuFont;
+      text-transform: capitalize;
+    }
+    i {
+      color: $white;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: $black;
+      font-weight: 100 !important;
+      cursor: pointer;
+    }
+  }
+
+  //************ loginBody
+  .loginBody {
+    padding: 30px 20px;
+    .form-group {
+      margin: 10px 0px !important;
+      p {
+        color: #c00;
+        font-size: 13px;
+        margin: 10px 0;
+        height: 10px;
+        .success {
+          color: lawngreen;
+        }
+      }
+      margin-top: 40px;
+      &:first-child {
+        margin-top: 20px;
+      }
+      label {
+        color: $white;
+        font-size: $paraFont;
+        display: block;
+      }
+      .dob {
+        display: flex;
+        // width: calc(100% / 3);
+        input {
+          &::placeholder {
+            color: $white;
+            font-weight: 500;
+          }
+        }
+        select {
+          &:nth-child(2) {
+            margin: 0px 10px;
+          }
+          option {
+            color: $black;
+            font-size: $paraFont;
+            text-transform: capitalize;
+          }
+        }
+      }
+      input,
+      select {
+        border: 1px solid #666;
+        width: 100%;
+        background: transparent;
+        height: 35px;
+        outline: none;
+        padding: 0 0 0 10px;
+        caret-color: $golden;
+        color: $white;
+      }
+      button {
+        width: 100%;
+        background: #fae18f;
+        padding: 8px;
+        border: none;
+        color: $black;
+        font-size: 18px;
+        font-family: $hekouFont;
+        &:disabled {
+          background: #999;
+        }
+        a {
+          color: $black;
+        }
+      }
+
+      //phone{
+      .phone {
+        display: flex;
+        justify-content: space-between;
+        .sel {
+          display: flex;
+          width: 30%;
+          height: 35px;
+          border: 1px solid #555;
+          padding: 10px 5px;
+          align-items: center;
+          input {
+            // margin-left: 10px;
+            // padding: 0;
+            // margin: 0 !important;
+            // background: transparent;
+            // color: $white;
+            // height: 20px;
+            // border: none;
+            // border-bottom: 1px solid $white;
+            // outline: none;
+            border: none;
+            outline: none !important;
+            box-shadow: none !important;
+            margin-left: 25px;
+          }
+          .react-tel-input .flag-dropdown {
+            background: transparent !important;
+            border: none;
+            .selected-flag {
+              background: transparent !important;
+              .flag {
+                left: 1px;
+              }
+              &:focus {
+                box-shadow: none !important;
+              }
+              &:hover {
+                background: transparent !important;
+              }
+            }
+          }
+        }
+        input {
+          width: 68%;
+        }
+      } //phone
+    }
+
+    .remember {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .rememberme {
+        p {
+          display: flex;
+          align-items: center;
+          font-size: $paraFont;
+          color: $white;
+          text-transform: capitalize;
+          input[type="checkbox"] {
+            margin-right: 4px;
+            opacity: 000000.1;
+            &:checked {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      a {
+        font-size: $paraFont;
+        color: $golden;
+        text-transform: capitalize;
+      }
+    }
+  } //loginBody
+
+  //loginwith
+  .loginwith {
+    margin-top: 20px;
+    border-bottom: 1px solid #555;
+    // padding: 0px 0px 40px;
+    margin-bottom: 20px;
+    .heading {
+      text-align: center;
+      position: relative;
+      h3 {
+        font-size: $menuFont;
+        text-transform: capitalize;
+        color: $golden;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -18px;
+        span {
+          background: #101010;
+          padding: 0px 10px;
+        }
+      }
+    }
+    .images {
+      padding: 20px;
+      margin: 30px 0;
+      text-align: center;
+      button {
+        margin: 10px auto;
+        display: block;
+        width: 80%;
+        // height: 40px;
+        text-align: center;
+        font-family: $roboto !important;
+        font-size: $paraFont !important;
+        &:first-child {
+          background: #3b5998;
+          font-weight: inherit;
+        }
+        &:last-child {
+          background: #4285f4 !important;
+          text-align: center !important;
+          span {
+            width: 100%;
+            color: $white;
+          }
+        }
+      }
+    }
+  } //loginwith
+
+  //accout
+  .accout {
+    padding: 20px 20px 40px;
+    border-bottom: 1px solid #555;
+    margin-bottom: 20px;
+    text-align: center;
+    img {
+      width: 50px;
+    }
+    p {
+      text-transform: capitalize;
+      font-size: $paraFont;
+      margin-bottom: 15px;
+      margin-top: 10px;
+      color: $white;
+    }
+    a {
+      color: $white;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: bold;
+      border-bottom: 1px solid #ccc;
+    }
+  } //accout
+}
+
+// ***************
+.fb2nd {
+  display: none;
+  min-height: 100vh;
+  width: 0;
+  overflow: hidden;
+  // overflow-y: scroll;
+  &#show2nd {
+    display: block;
+    width: 350px;
+    position: relative;
+    z-index: 999;
+  }
+}
+
+.loginEye {
+  width: 20px;
+  position: absolute;
+  right: 30px;
+  margin-top: 8px;
+}

@@ -1,0 +1,35 @@
+.Doc_div {
+  .card__banner {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    margin-top: 0px;
+    @include tab {
+      margin-top: 58px !important;
+      background-color: $darkBlack;
+    }
+  }
+
+  // abs
+  .abs {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    h3 {
+      color: $white;
+      font-family: $hekouFont;
+      font-size: 38px;
+    }
+    span {
+      text-transform: capitalize;
+      font-size: 16px;
+      color: $white;
+    }
+  }
+}
+
+.privacy_content {
+  background-image: url("../img/privacyPolicy/background.jpg");
+  background-size: contain;
+  background-position: inherit;
+}

@@ -1,0 +1,556 @@
+@import "__variable";
+.mainTabs {
+  @include tab {
+    .offset-1 {
+      margin-left: 0px !important;
+    }
+  }
+  .wallet1 {
+    position: relative;
+    top: 0px;
+    @include tab {
+      top: 20px;
+    }
+    .wallet_statemate_list {
+      width: 100%;
+      overflow: overlay;
+    }
+    &.message {
+      .tab-content {
+        display: block;
+        width: 100%;
+        overflow: overlay;
+      }
+      .nav-tabs {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .payment_history {
+        .table {
+          margin-top: 70px;
+          width: max-content;
+          @include tab {
+            width: 100%;
+          }
+          .success {
+            text-align: center;
+            font-size: 22px !important;
+            color: $white;
+          }
+          th {
+            &:last-child {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+    .payment_history {
+      overflow: auto;
+      overflow: auto !important;
+      height: 230px;
+      margin-bottom: 20px;
+      // border: 5px solid #fff;
+    }
+    .nav-tabs {
+      border: none;
+      a {
+        border: none;
+        background: $lightBlack;
+        background: transparent;
+        //   margin: 0px 1px;
+        text-transform: capitalize;
+        font-size: $menuFont;
+        color: $golden;
+        padding: 20px 0px !important;
+        border-right: 2px solid $black;
+        border-radius: 0 !important;
+        width: calc(100% / 4);
+        @include tab {
+          width: calc(100% / 2);
+        }
+        &:last-child {
+          border: none;
+        }
+        text-align: center;
+        font-family: $monteSerrat;
+
+        &.active {
+          background: $black;
+          border: none;
+          color: $white;
+        }
+        &:hover {
+          border-color: $black;
+        }
+      } //
+    }
+
+    //balance
+    .balance {
+      display: flex;
+      background: #0f0f0f;
+      padding: 30px 20px 30px 40px;
+      margin: 60px 0;
+      align-items: center;
+      @include tab {
+        display: block;
+        margin: 5px 0;
+        padding: 10px 20px 10px 40px;
+      }
+
+      h3 {
+        font-size: $menuFont;
+        color: $golden;
+        text-transform: capitalize;
+        @include tab {
+          text-align: center;
+        }
+        span {
+          color: $white;
+        }
+      }
+      button {
+        background: $golden;
+        padding: 8px 20px;
+        margin-left: 60px;
+        border: none;
+        color: $black;
+        text-transform: capitalize;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 20px;
+          margin-right: 10px;
+        }
+      }
+    } //balance
+
+    //filter
+    .filter {
+      margin: 30px 0;
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      select {
+        display: block;
+        width: 100%;
+        background: transparent;
+        height: 40px;
+        color: $white;
+        padding: 0 0 0 10px;
+        outline: none;
+      }
+      label {
+        color: $white;
+        font-size: $paraFont;
+      }
+      .last {
+        visibility: hidden;
+        display: block;
+      }
+      button {
+        background: transparent;
+        height: 40px;
+        padding: 0px 30px;
+        border: 1px solid $golden;
+        color: $white;
+        font-size: $paraFont;
+        letter-spacing: 1.2px;
+      }
+    } //filter
+
+    //table
+    table {
+      margin: 0;
+      thead {
+        margin-bottom: 20px;
+        tr {
+          border-top: 1px solid $lightBlack !important;
+          border-bottom: 1px solid $lightBlack !important;
+          margin-bottom: 30px !important;
+        }
+        th {
+          color: $golden;
+          font-size: $paraFont !important;
+          font-size: $menuFont;
+          border: none;
+        }
+      } //thead
+
+      tbody {
+        tr {
+          border-bottom: 1px solid $lightBlack;
+          td {
+            border: none;
+            color: $white;
+            text-transform: capitalize;
+            font-size: $paraFont !important ;
+            &.success {
+              font-weight: $fontWeight;
+              color: green;
+            }
+          }
+        }
+      }
+    }
+
+    //pagination
+    .pagination {
+      display: flex;
+      justify-content: flex-end;
+      .buttons {
+        position: relative;
+        top: 10px;
+        button {
+          background: transparent;
+          color: $golden;
+          border: none;
+          font-size: $paraFont;
+          &:disabled {
+            color: #999;
+          }
+          i {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    //deposit{
+    .deposit {
+      margin: 60px 0;
+      //amounts
+      .amount {
+        label {
+          color: $white;
+          font-size: $paraFont;
+          // margin-right: 10px;
+        }
+        input {
+          height: 40px;
+          background: #111;
+          border: 1px solid #555;
+          outline: none;
+          width: 40%;
+          caret-color: $golden;
+          padding: 0px 0px 0px 10px;
+          margin: 0px 10px;
+          color: $white;
+        }
+        span {
+          color: #8f6e1c;
+          font-weight: $fontWeight;
+          margin-left: 20px;
+          font-family: $hekouFont;
+        }
+      } // amount
+
+      //upis
+      .upis {
+        margin-top: 60px;
+        display: block;
+        // justify-content: space-between;
+        font-family: $roboto;
+        .leftupi {
+          // width: 70%;
+          background: $lightBlack;
+          .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &:nth-child(3) {
+              align-items: flex-start;
+            }
+            padding: 20px;
+            margin: 0;
+            border-bottom: 1px solid #555;
+            input,
+            select {
+              background: #222222;
+              color: #999;
+              padding: 0 0 0 10px;
+              outline: none;
+              // border: 1px solid #444;
+              border: none;
+              width: 100%;
+              height: 40px;
+              font-size: $paraFont;
+              &::placeholder {
+                color: #999;
+                font-size: $paraFont;
+                text-transform: capitalize;
+              }
+            }
+            &.merg {
+              padding-bottom: 0 !important;
+            }
+            &.boreder {
+              border: none;
+            }
+            .checkbox {
+              display: flex;
+              align-items: center;
+              input {
+                width: 20px;
+                background: $lightBlack !important;
+                margin-right: 10px;
+              }
+              color: $white;
+              font-size: $paraFont;
+              text-transform: capitalize;
+            }
+            .debit {
+              width: 60%;
+              margin: 0 auto;
+              &.bank {
+                input {
+                  margin: 10px 0;
+                  &:first-child {
+                    margin-top: 0;
+                  }
+                  &:last-child {
+                    width: 50%;
+                    margin: 0;
+                  }
+                }
+              }
+              input {
+                &:nth-child(2) {
+                  margin: 10px 0;
+                }
+              }
+              .expiry {
+                display: flex;
+                input {
+                  margin: 0 0 0 10px !important;
+                }
+              }
+            }
+            .arrow {
+              cursor: pointer;
+              width: 30px;
+            }
+          }
+          label {
+            color: $golden;
+            font-size: $paraFont;
+            margin: 0;
+            text-transform: capitalize;
+            width: 25%;
+          }
+        } //leftupi
+
+        //rightupi
+        .rightupi {
+          // margin-left: 30px;
+          // width: 30%;
+          .warning_message {
+            color: red;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            padding-left: 15px;
+          }
+          .amount_div {
+            background-color: $lightBlack;
+            // padding: 10px 0px;
+            margin: 0px;
+            margin-left: 15px;
+            margin-bottom: 0px;
+            width: 100%;
+            display: flex;
+            @include tab {
+              display: block;
+            }
+
+            .amount_input {
+              width: 100%;
+              background: transparent;
+              border: 0px;
+              border-bottom: 1px solid $golden;
+              height: 36px;
+              color: $golden;
+            }
+            p {
+              background: $golden;
+              margin-bottom: 0px;
+              color: #000;
+              font-weight: 600;
+              img {
+                width: 44px;
+                margin-left: -22px;
+                margin-right: 5px;
+              }
+            }
+          }
+
+          h3 {
+            color: $white;
+            font-size: $menuFont;
+            width: 100%;
+            padding: 0px 15px;
+          }
+          .item {
+            background: $lightBlack;
+            padding: 10px 0;
+            text-align: center;
+            margin: 20px 0;
+            &:last-child {
+              margin-top: 0;
+            }
+            img {
+              width: 70px;
+            }
+          }
+        } //rightupi
+      } //upis
+
+      .qr_code {
+        padding: 30px 0px;
+        .counting {
+          width: 100%;
+          .counting_para {
+            text-align: center;
+            margin-top: -135px;
+            font-size: 60px;
+            color: $golden;
+            font-weight: 600;
+            font-family: monospace;
+          }
+        }
+        .arrow_back {
+          color: $golden;
+          font-size: 40px;
+        }
+        .disc_para {
+          color: $fontColor;
+          font-size: 14px;
+          span {
+            float: right;
+            font-size: 12px;
+            color: red;
+            font-weight: 600;
+          }
+        }
+        .qr_code_img {
+          margin-left: auto;
+          margin-right: auto;
+          border-radius: 10px;
+          margin-top: 25px;
+          margin-bottom: 30px;
+        }
+        .qr_code_img2 {
+          margin-left: auto;
+          margin-right: auto;
+          border-radius: 10px;
+          margin-top: 25px;
+          margin-bottom: 30px;
+          width: 125px;
+        }
+        .qr_code_p {
+          width: 100%;
+          text-align: center;
+          color: $golden;
+          margin-bottom: 30px;
+        }
+        .qr_code_p2 {
+          width: 100%;
+          text-align: center;
+          color: $fontColor;
+          margin-bottom: 30px;
+        }
+        .amount_proceed {
+          padding-left: 15px;
+          padding-right: 15px;
+          h3 {
+            width: 100%;
+            font-size: 16px;
+            color: $fontColor;
+            font-weight: 500;
+          }
+          .amount_div {
+            width: 100%;
+            background-color: $lightBlack;
+            input {
+              width: 100%;
+              background: transparent;
+              border: 0px;
+              border-bottom: 1px solid #ffd978;
+              height: 36px;
+              color: #ffd978;
+            }
+            .proceed_btn {
+              background: #ffd978;
+              margin-bottom: 0px;
+              color: #000;
+              font-weight: 600;
+              p {
+                margin-bottom: 0px;
+                font-weight: 900;
+                font-family: "embrima";
+                span {
+                  margin-right: 20px;
+                }
+              }
+              img {
+                width: 44px;
+                margin-left: -35px;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+      .proceed {
+        // margin: 10px 0;
+        text-align: center;
+        position: relative;
+        img {
+          width: 100px;
+          position: absolute;
+          left: 50%;
+          top: 10px;
+          transform: translate(-50%, 0);
+        }
+      }
+    } //deposit}
+  }
+}
+.paymentLoaderAdd {
+  position: relative;
+}
+
+.paymentLoader {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 15px;
+  img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+}
+
+.checkBalanceBtn {
+  background-color: #ffd978;
+  color: #000;
+  font-weight: 600;
+}
+.noTransaction {
+  color: #fff;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  padding: 50px 20px;
+}

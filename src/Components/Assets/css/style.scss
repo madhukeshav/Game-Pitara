@@ -1,0 +1,67 @@
+// **************** Imports ***********
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import "_responsive";
+@import "__variable";
+@import "__profile";
+@import "__home";
+@import "__wallet";
+@import "__loginsignup";
+@import "__why";
+@import "__experience";
+@import "__gameprovider";
+@import "__footer";
+@import "__header";
+@import "__cards";
+@import "__componentsCollection";
+@import "__roulette";
+@import "__testimonial";
+@import "__docpage";
+
+* {
+  text-decoration: none !important;
+}
+// .container-custom {
+//   @media only screen and (max-width: 1400px) {
+//     max-width: 100% !important;
+//   }
+// }
+
+.slick-vertical .slick-slide {
+  display: flex !important;
+  width: 50% !important;
+  justify-content: space-between;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $monteSerrat;
+  //   font-weight: $fontWeight;
+  letter-spacing: 1.3px;
+  background-color: #000;
+}
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+@include tab {
+  .desktop_only {
+    display: none !important;
+  }
+}
+.mobile_only {
+  display: none;
+}
+@include tab {
+  .mobile_only {
+    display: block;
+  }
+}
+
+.crisp-client .cc-kv6t .cc-1xry .cc-ge4v .cc-qqzz .cc-5b24 .cc-19cg {
+  display: none !important;
+}
+.crisp-client .cc-kv6t .cc-1xry .cc-unoo .cc-7doi {
+  position: absolute !important;
+  bottom: 50px !important;
+  right: 0px !important;
+}

@@ -1,0 +1,238 @@
+.games__part {
+  background: $black;
+  .container {
+    margin-top: -100px;
+    @include tab {
+      margin-top: 0px;
+    }
+    // search bar
+    .searchbar_div {
+      position: absolute;
+      width: 80%;
+      background: $black;
+      top: 0px;
+      left: 15px;
+      padding-bottom: 30px;
+      @include tab {
+        width: auto;
+        right: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+      .search_section3 {
+        background-color: $darkBlack;
+        @include tab {
+          padding: 0px 0px;
+        }
+      }
+
+      .search_your_game {
+        color: #ffd978;
+        margin-bottom: 0px;
+        background: transparent;
+        border: 0px;
+      }
+      .search_dropdown {
+        background: transparent;
+        color: #ffd978;
+        border: 0px;
+        border-bottom: 1px solid #ffd978;
+        border-radius: 0px;
+        &:focus {
+          background: transparent;
+          color: #ffd978;
+          border: 0px;
+          border-bottom: 1px solid #ffd978;
+          border-radius: 0px;
+        }
+        option {
+          background: #000;
+        }
+      }
+      .search_div {
+        display: flex;
+        .btn {
+          width: 100%;
+          border-radius: 0px;
+          background: #ffd978;
+          border-color: #ffd978;
+          color: #000;
+          font-weight: 600;
+          &:focus {
+            box-shadow: 0 0 0 0rem #ffd978;
+          }
+          @include tab {
+            padding-left: 20px;
+          }
+        }
+        img {
+          width: 45px;
+          height: 40px;
+          align-items: center;
+          background: #010101;
+          margin-right: -19px;
+          z-index: 0;
+          padding: 8px;
+          border-radius: 50%;
+        }
+      }
+    }
+    .banner_maindiv {
+      display: flex;
+      padding-top: 15px;
+    }
+
+    // side bar
+    .flex-column {
+      .nav-link {
+        display: flex;
+        justify-content: end;
+        text-align: left;
+        font-weight: 500;
+        font-family: "roboto";
+        margin: 0;
+        font-size: 16px;
+        padding: 4px 4px !important;
+        height: 120px;
+        color: $fontColor;
+        text-transform: capitalize;
+        background-color: $lightBlack;
+        border-bottom: 2px solid $darkBlack;
+        @include tab {
+          flex-direction: column;
+          height: auto;
+          font-size: 10px;
+          text-align: center;
+        }
+      }
+      .nav-link.active {
+        color: $golden;
+        background-color: $darkBlack;
+      }
+      img {
+        margin-right: 5px;
+        width: 50px;
+        @include tab {
+          width: 25px;
+        }
+      }
+    }
+
+    .Game_gridview {
+      background-color: $black;
+      padding-left: 15px;
+      margin-top: 70px;
+      .Big_gameImg_div img {
+        display: block;
+        border: 2px solid $golden;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+// game single Image section
+.gameImg_div {
+  padding: 15px;
+  // min-height: 200px;
+  // z-index: 9;
+  .game_name_p {
+    display: none;
+    color: $fontColor;
+    font-weight: 600;
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    text-align: center;
+    left: 0px;
+    font-size: 12px;
+  }
+  .game_name_Play {
+    display: none;
+    color: $fontColor;
+    font-weight: 600;
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+    text-align: center;
+    left: 0px;
+    font-family: "embrima";
+  }
+  cursor: pointer;
+  @include tab {
+    width: 50%;
+  }
+  .blackjack_img_c {
+    width: 210px;
+  }
+  .gameImg {
+    display: block;
+    border: 2px solid $golden;
+    border-radius: 10px;
+  }
+  // .gameImg_Hover {
+  //   display: none;
+  //   border: 2px solid $golden;
+  //   border-radius: 10px;
+  // }
+  &:hover {
+    .gameImg {
+      // display: none;
+      filter: blur(2px);
+      transform: scale(1.1);
+    }
+    .game_name_p {
+      display: block;
+    }
+    .game_name_Play {
+      display: block;
+    }
+    .lazy-load-image-background {
+      filter: brightness(0.5) !important;
+    }
+    // .gameImg_Hover {
+    //   display: block;
+    //   transform: scale(1);
+    // }
+  }
+}
+
+//Document Section
+.Doc_section {
+  padding: 50px;
+
+  .privacy_row {
+    border: 2px solid $golden;
+    padding: 15px;
+
+    .doc_box {
+      margin: 10px 0px;
+      .doc_heading {
+        font-size: $subheading;
+        color: $golden;
+        font-weight: 600;
+        margin-top: 25px;
+      }
+      .doc_para {
+        font-size: $paraFont;
+        color: $white;
+      }
+    }
+  }
+}
+
+//Page Loader
+.loader_section {
+  height: 100vh;
+  background-color: $darkBlack;
+  .page_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    .img {
+      max-width: 100px !important;
+    }
+  }
+}

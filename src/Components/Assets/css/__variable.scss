@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
+}
+@font-face {
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
+}
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/Roboto/Roboto-Light.ttf) format("truetype");
+}
+$golden: #ffd978;
+$darkBlack: #000;
+$black: #151515;
+$lightBlack: #1d1d1d;
+$white: #ffffff;
+$fontColor: #fff;
+$fontSecondryColor: #8f99a3;
+$menuFont: 16px;
+$hekouFont: hekou;
+$embrima: embrima;
+$headingFont: 26px;
+$subheading: 16px;
+$paraFont: 14px;
+$SmaillParaFont: 12px;
+$roboto: "Roboto", sans-serif;
+$monteSerrat: "Montserrat", sans-serif;
+$fontWeight: 600;
+
+@mixin heading {
+  font-size: $headingFont;
+  font-family: $hekouFont;
+  text-transform: uppercase;
+  color: $white;
+}

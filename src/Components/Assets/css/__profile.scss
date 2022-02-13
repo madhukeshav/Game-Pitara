@@ -1,0 +1,199 @@
+@import "__variable";
+// ******************* banner ************
+.background {
+  background: $lightBlack url(../img/wallet/db-banner2.jpg) no-repeat center bottom;
+  background-size: cover;
+  padding: 100px 0 550px;
+}
+
+.banner {
+  background: $lightBlack url(../img/wallet/db-banner.jpg) no-repeat center;
+  background-size: cover;
+  padding: 100px 0 0;
+  margin-top: -100px;
+  position: relative;
+  top: 0;
+
+  .mainTabs {
+    background: $black;
+    // margin-top: 200px;
+    position: relative;
+    top: 300px;
+    // min-height: 680px;
+    // max-height: 680px;
+    // position: absolute;
+    @include tab {
+      min-height: auto;
+      max-height: max-content;
+      top: 75px;
+    }
+    //nav-item
+
+    .nav-item {
+      a {
+        background: $lightBlack;
+        padding: 52px 20px !important;
+        border-radius: 0;
+        text-align: center;
+        margin-top: 2px;
+        color: $golden;
+        @include tab {
+          padding: 10px 20px !important;
+        }
+        img {
+          display: block;
+          margin: 0px;
+          width: 50px;
+          margin-right: 15px;
+          @include tab {
+            width: 25px;
+          }
+        }
+        span {
+          font-size: 22px;
+          font-family: $hekouFont;
+          border-bottom: 1px solid #999;
+        }
+        &.active {
+          background-color: $black;
+          color: $white;
+          img {
+            margin: 0px;
+            width: 50px;
+            margin-right: 15px;
+            @include tab {
+              width: 25px;
+            }
+          }
+          span {
+            border-bottom: none;
+          }
+        }
+      }
+    } //nav-item
+
+    //profile{
+    .profile {
+      margin: 90px 0 0;
+      width: 100%;
+      .ppicture {
+        text-align: center;
+        img {
+          width: 200px;
+          margin-right: 0px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 15px;
+          @include tab {
+            width: 50%;
+          }
+        }
+        span {
+          background: $golden;
+          color: $darkBlack;
+          // text-transform: capitalize;
+          padding: 8px 20px;
+          font-weight: $fontWeight;
+          font-family: $roboto;
+          border: 1px solid $golden;
+          border-radius: 5px;
+        }
+        p {
+          color: $golden;
+          text-transform: capitalize;
+          margin-top: 10px;
+          font-size: $paraFont;
+        }
+      } //
+
+      //updates
+      .result {
+        position: absolute;
+        h3 {
+          color: green;
+          text-transform: capitalize;
+          font-size: $paraFont;
+        }
+      }
+      //password
+
+      .password {
+        position: relative;
+        input {
+          background: #222222;
+          color: #999;
+          padding: 0 0 0 10px;
+          outline: none;
+          border: none;
+          width: 60%;
+          height: 40px;
+          font-size: 14px;
+          display: block;
+          position: absolute;
+        }
+        // margin-top: 20px;
+        button {
+          margin-top: 30px;
+        }
+      }
+      .updates {
+        margin-top: 40px;
+        padding-bottom: 25px;
+        button {
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid $white;
+          color: $golden;
+          font-size: $paraFont;
+          position: relative;
+          top: 10px;
+          padding: 0;
+        }
+        .item {
+          &:first-child {
+            border-top: 1px solid $lightBlack;
+          }
+          &:nth-child(even) {
+            i {
+              color: #666;
+            }
+          }
+
+          border-bottom: 1px solid $lightBlack;
+          display: flex;
+          justify-content: space-between;
+          // padding-bottom: 6px;
+          padding: 10px 10px;
+
+          span {
+            width: 250px;
+            color: $white;
+            text-transform: capitalize;
+            font-family: $roboto;
+            font-size: $paraFont;
+            @include tab {
+              width: auto;
+            }
+            &:nth-child(1) {
+              width: 150px;
+              font-weight: $fontWeight;
+            }
+          }
+          input {
+            background: transparent;
+            color: $white;
+            border: none;
+            outline: none;
+            &:disabled {
+            }
+          }
+          i {
+            color: $golden;
+            cursor: pointer;
+          }
+        }
+      } //updates
+    } //profile}
+  }
+}

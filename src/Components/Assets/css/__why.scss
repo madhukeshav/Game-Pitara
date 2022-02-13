@@ -1,0 +1,261 @@
+@import "__variable";
+
+.why {
+  background: url("../img/why/background.jpg") no-repeat center center;
+  padding: 0;
+  background-size: cover;
+  background-position: top;
+  &#after {
+    background: none;
+    padding: 10px 0;
+  }
+  @include tab {
+    padding: 0px;
+    .why_section {
+      padding-left: 30px;
+      padding-right: 30px !important;
+      @include tab {
+        padding-left: 15px;
+        padding-right: 15px !important;
+      }
+    }
+    .container {
+      padding: 0px;
+    }
+  }
+  .lowerBanner {
+    &__slider {
+      height: 175px !important;
+    }
+    &__singleGame {
+      width: 100%;
+      height: 175px;
+      border-radius: 15px;
+    }
+    &__doubleGame {
+      width: 100%;
+      height: 175px;
+      border-radius: 15px;
+    }
+    .carousel {
+      @include tab {
+        margin-top: 0px !important;
+      }
+    }
+  }
+
+  //tabs
+  .tabs {
+    //nav
+    nav {
+      border: none;
+      background: linear-gradient($black 20%, $lightBlack 90%);
+      margin-bottom: 10px;
+      @include tab {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow: auto;
+        overflow-y: hidden;
+      }
+
+      a {
+        color: #999;
+        padding: 20px 10px;
+        // margin: 0px 10px;
+        text-align: center;
+        font-size: $paraFont;
+        font-weight: $fontWeight;
+        width: calc(100% / 10);
+        font-family: "roboto";
+        font-weight: 500;
+        padding: 15px 10px !important;
+        &.active {
+          background: $darkBlack;
+          border: none;
+          color: $golden;
+        }
+        &:hover {
+          border: none;
+        }
+        @media only screen and (max-width: 992px) {
+          // width: calc(100% / 7);
+          width: 33%;
+        }
+      }
+    } //nav
+    .images {
+      margin-top: 40px;
+      text-align: center;
+    }
+  }
+
+  //searchbar on tabs
+  .search_tabs {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: $darkBlack;
+    padding: 7px;
+    height: 53px;
+    margin-right: 15px;
+    @media only screen and (max-width: 700px) {
+      left: 0px;
+      display: none;
+    }
+    .search_input {
+      text-align: left;
+      color: #ddd;
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0rem !important;
+      }
+      @media only screen and (max-width: 700px) {
+        width: 80%;
+      }
+    }
+    img {
+      margin-right: 10px;
+      background: $lightBlack;
+      padding: 6px;
+      border-radius: 50%;
+    }
+  }
+
+  //why__us
+  .why__us {
+    .heading {
+      @include heading;
+      color: $golden;
+      padding: 15px 0;
+    }
+
+    .img {
+      margin-top: 30px;
+      .img__in {
+        position: relative;
+        text-align: center;
+        img {
+          max-width: 80%;
+          margin: 0 auto;
+        }
+        .title {
+          font-family: $roboto;
+          border: 1px solid $black;
+          text-align: center;
+          background: #3b3a39;
+          text-transform: capitalize;
+          position: relative;
+          top: -30px;
+
+          span {
+            color: #ddd;
+            font-size: 13px;
+          }
+          h4 {
+            color: $white;
+            font-size: 13px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  } //why__us
+
+  .loggedRight {
+    background: $lightBlack;
+    padding: 20px 15px;
+    text-align: center;
+    .rpb {
+      img {
+        width: 40px;
+      }
+      span {
+        font-size: $menuFont;
+        display: block;
+        color: $white;
+        margin: 15px 0;
+        font-weight: $fontWeight;
+      }
+      h3 {
+        font-size: 22px;
+        font-family: $hekouFont;
+        color: $golden;
+      }
+    } // rpb
+    .level {
+      display: flex;
+      margin: 50px 0;
+      img {
+        width: 70px;
+        // height: auto;
+        object-fit: contain;
+      }
+      .level__content {
+        margin-left: 13px;
+        h3 {
+          text-align: left;
+          font-family: $hekouFont;
+          color: $golden;
+        }
+        p {
+          color: $white;
+          font-size: $paraFont;
+          img {
+            width: 20px;
+          }
+        }
+      }
+    }
+    //level
+
+    //wallet
+    .wallet {
+      // margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      a {
+        color: $golden;
+        text-transform: uppercase;
+        border-bottom: 1px solid #999;
+        font-size: $paraFont;
+        // text-decoration: underline !important;
+      }
+    }
+    //wallet
+  }
+}
+
+.lowerBanner__mobile {
+  .carousel {
+    box-shadow: 2px 0px 17px -7px #ffda78;
+  }
+}
+.lowerBanner__singleGame {
+  box-shadow: 2px 0px 17px -7px #ffda78;
+}
+.lowerBanner__doubleGame {
+  box-shadow: 2px 0px 17px -7px #ffda78;
+}
+.lowerBanner__row {
+  padding: 0px 15px !important;
+}
+
+@include tab {
+  .lowerBanner__row {
+    padding: 0px 0px !important;
+  }
+  .lowerBanner__mobile {
+    width: 60% !important;
+    .home-winnerSlider {
+      height: 110px !important;
+    }
+  }
+  .lowerBannerIMG__mobile {
+    width: 40% !important;
+    padding-left: 10px !important;
+    .lowerBanner__singleGame {
+      height: 110px;
+    }
+  }
+}

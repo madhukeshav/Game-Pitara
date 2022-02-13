@@ -1,0 +1,474 @@
+@import "__variable";
+
+.home {
+  background-color: $darkBlack;
+  //***** banner
+  @include tab {
+    .carousel {
+      margin-top: 70px;
+    }
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5%;
+    color: $fontColor;
+    text-align: center;
+    opacity: 0.5;
+    transition: opacity 0.15s ease;
+  }
+
+  .home__banner {
+    background-size: cover;
+    padding: 0;
+    background-color: $lightBlack;
+    background-position: center;
+    // height: 550px;
+    margin-top: 76px;
+    .Banner_content {
+      position: absolute;
+      bottom: 8rem;
+      left: 12rem;
+      .playnow_btn {
+        border: 1px solid $golden;
+        padding: 10px 45px;
+        background-color: transparent;
+        color: $golden;
+        margin-bottom: 0px;
+        font-size: 14px;
+        @include tab {
+          margin-top: 10px;
+          margin-bottom: 20px;
+          float: left;
+          font-size: 12px;
+        }
+      }
+      h1 {
+        font-size: 56px;
+        font-family: $hekouFont;
+        font-weight: $fontWeight;
+        text-transform: uppercase;
+        color: $white !important;
+        @include tab {
+          font-size: 14px;
+          text-align: left;
+        }
+      }
+      span {
+        color: #999;
+        text-transform: capitalize;
+        font-size: 12px;
+        display: block;
+        text-align: left;
+        width: 100%;
+      }
+    }
+    @include tab {
+      // height: 125px;
+      margin-top: 0px;
+      .Banner_content {
+        bottom: 0px;
+        left: 7%;
+        .playnow_btn {
+          padding: 7px 15px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .carousel-caption {
+    position: absolute;
+    right: 5%;
+    bottom: 0%;
+    left: 5%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: $fontColor;
+  }
+
+  .slots {
+    position: relative;
+    bottom: 40px;
+    text-align: left;
+    @include tab {
+      bottom: 10px;
+    }
+
+    h1 {
+      font-size: 56px;
+      font-family: $hekouFont;
+      font-weight: $fontWeight;
+      text-transform: uppercase;
+      color: $white !important;
+      @include tab {
+        font-size: 14px;
+      }
+    }
+    span {
+      color: #999;
+      text-transform: capitalize;
+      font-size: 12px;
+    }
+    .icons {
+      display: flex;
+      margin-top: 30px;
+      @include tab {
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+      }
+    }
+
+    .item {
+      margin: 5px 10px;
+      display: flex;
+      padding: 0px 10px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-width: 100px;
+      height: 120px;
+      background: rgba(0, 0, 0, 0.651);
+      border-radius: 10px;
+      @include tab {
+        min-width: auto;
+        height: 75px;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+      img {
+        width: 55px;
+        @include tab {
+          width: 30px;
+        }
+      }
+      span {
+        font-size: 11px;
+        margin-top: 10px;
+        color: #999;
+        b {
+          color: $white !important;
+        }
+      }
+    }
+  }
+
+  // ***** banner end
+
+  // ************** winning
+  .whyWinner {
+    margin-top: 20px;
+    padding: 0px 15px !important;
+  }
+  .winning2 {
+    background: url(../img/winning/backgound.jpg) no-repeat center center;
+    padding: 100px 0;
+    background-size: cover;
+  }
+  .winning {
+    @include tab {
+      background: url(../img/winning/backgound.jpg) center center;
+      padding: 0px 0px;
+    }
+    &#winners {
+      background: url("../img/why/background.jpg") no-repeat center center;
+      .video {
+        position: relative;
+        top: 60px;
+      }
+    }
+
+    .video {
+      // background-color: $lightBlack;
+      .video_section {
+        z-index: 9;
+        .video_frame {
+          height: 85%;
+          width: 100%;
+        }
+      }
+      .content_section {
+        background: $lightBlack;
+        margin-left: -225px;
+        z-index: 0;
+        padding-left: 225px;
+        border-radius: 20px;
+        box-shadow: 2px 0px 17px -7px #ffda78;
+      }
+      @media only screen and (max-width: 700px) {
+        .content_section {
+          background: $lightBlack;
+          margin-left: 0px;
+          z-index: 0;
+          padding: 30px 15px;
+        }
+      }
+      .video__content {
+        padding: 10px 0;
+        h3 {
+          @include heading;
+        }
+        span {
+          color: $golden;
+          font-size: $paraFont;
+        }
+        p {
+          color: #999;
+          font-size: $paraFont;
+          margin: 20px 0 0 0;
+        }
+      }
+    } // end
+
+    .winnings__days {
+      height: 100%;
+      padding: 10px;
+      h3 {
+        @include heading;
+        color: $golden;
+      }
+      .item {
+        display: flex;
+        margin: 10px 0;
+        img {
+          width: 60px;
+          object-fit: contain;
+          margin-right: 10px;
+        }
+        span {
+          color: $white;
+          font-size: $paraFont;
+          font-family: $roboto;
+          text-transform: capitalize;
+        }
+        div {
+          line-height: 1.2;
+        }
+        .winning__price {
+          span {
+            // font-size: $paraFont;
+            color: #f9bb22;
+            font-family: $hekouFont;
+            b {
+              color: $white;
+              font-weight: inherit !important;
+            }
+          }
+        }
+      }
+      .slick-list {
+        height: 150px !important;
+      }
+    }
+
+    .threeTrust {
+      .threeTrust-col {
+        padding: 10px;
+      }
+      &__section {
+        background: #000;
+        border-radius: 20px;
+        box-shadow: 0px 0px 19px -7px #ffda78;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          width: 70px;
+        }
+        &__p1 {
+          margin: 0px;
+          color: #fff;
+          margin-top: 10px;
+          font-size: 10px;
+        }
+        &__p2 {
+          margin: 0px;
+          color: #fff;
+          margin-top: 3px;
+          font-size: 10px;
+        }
+      }
+    }
+    .videoSectionFooter {
+      // height: 50px;
+      background-color: transparent;
+      border-radius: 20px;
+      box-shadow: 0px 0px 19px -7px #ffda78;
+      padding: 0px;
+      margin-top: 60px;
+      @include tab {
+        background-color: transparent;
+
+        border-radius: 20px;
+        box-shadow: none;
+        padding: 0px;
+        margin-top: 16px;
+        margin-bottom: 100px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .paymentAccept {
+      padding-left: 15px;
+      display: flex;
+      flex-direction: column;
+      &__heading {
+        margin-top: 20px;
+        font-size: 18px;
+        font-family: hekou;
+        text-transform: uppercase;
+        color: #ffffff;
+        text-align: left;
+      }
+      &__list {
+        background-color: #000;
+        border-radius: 20px;
+        box-shadow: 0px 0px 19px -7px #ffda78;
+        padding: 15px;
+        margin-top: 10px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .home-winnerSlider {
+      background-size: cover !important;
+      padding: 0;
+      background-color: #1d1d1d;
+      background-position: center;
+      height: 210px;
+      border-radius: 10px;
+    }
+    .home-winnerSlider_img_1 {
+      background: url("../img/home/winner/winner_banner_2.png") no-repeat center center;
+    }
+    .home-winnerSlider_img_2 {
+      background: url("../img/home/winner/winner_banner_3.png") no-repeat center center;
+    }
+    .home-winnerSlider_img_3 {
+      background: url("../img/home/winner/winner_banner_4.png") no-repeat center center;
+    }
+
+    .home-innerwinnerSlider_img_1 {
+      background: url("../img/home/lowerBanner/lowerBanner_3.png") no-repeat center center;
+    }
+    .home-innerwinnerSlider_img_2 {
+      background: url("../img/home/lowerBanner/lowerBanner_4.png") no-repeat center center;
+    }
+    .home-innerwinnerSlider_img_3 {
+      background: url("../img/home/lowerBanner/lowerBanner_5.png") no-repeat center center;
+    }
+  }
+  .whyus {
+    .heading {
+      h3 {
+        @include heading;
+        color: $golden;
+        text-align: center;
+      }
+    }
+    .img {
+      margin-top: 30px;
+      .img__in {
+        position: relative;
+        text-align: center;
+        img {
+          max-width: 55%;
+          margin: 0 auto;
+        }
+        .title {
+          font-family: $roboto;
+          border: 1px solid $black;
+          text-align: center;
+          background: #3b3a39;
+          text-transform: capitalize;
+          position: relative;
+          top: -30px;
+
+          span {
+            color: #ddd;
+            font-size: 13px;
+          }
+          h4 {
+            color: $white;
+            font-size: 13px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tab {
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .mobileml-0 {
+    margin-left: 0px !important;
+  }
+  .mobilemr-0 {
+    margin-right: 0px !important;
+  }
+  .mobilem-0 {
+    margin: 0px !important;
+  }
+  .mobilepl-0 {
+    padding-left: 0px !important;
+  }
+  .mobilepr-0 {
+    padding-right: 0px !important;
+  }
+  .mobilep-0 {
+    padding: 0px !important;
+  }
+}
+
+.carousel-indicators li {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-left: 5px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: transparent;
+  background-clip: padding-box;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  border: 1px solid #ffd978;
+}
+.carousel-indicators .active {
+  background-color: #ffd978;
+}
+
+.trailerVideo {
+  margin-top: -45px;
+}
+.threeTrust_div {
+  padding-left: 3rem;
+  @include tab {
+    padding-left: 3rem;
+  }
+}

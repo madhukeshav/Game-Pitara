@@ -1,0 +1,105 @@
+@import "__variable";
+
+// ******************* experience
+.experience {
+  background: url("../img/experience/Background.jpg") no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+  background-position: center;
+  @include tab {
+    padding: 25px 0 0px 0px;
+  }
+  .heading {
+    @include heading;
+    color: $golden;
+    text-align: left;
+    padding-left: 15px;
+    span {
+      font-size: 12px;
+      letter-spacing: 0;
+      padding: 3px 0px;
+      border-radius: 6px;
+      text-transform: initial;
+      font-family: $monteSerrat;
+      color: #ddd;
+      font-weight: 600;
+    }
+  }
+
+  .images {
+    // margin-top: 60px;
+    width: 100%;
+    margin: 30px auto 0 auto;
+    .images__in {
+      position: relative;
+      text-align: center;
+      img {
+        border-radius: 20px;
+      }
+      .infoSection {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        color: $white;
+        z-index: 9;
+        p {
+          margin-bottom: 0px;
+          font-size: 12px;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+//why__us
+.why__us {
+  .experience_why {
+    @include tab {
+      padding: 0px;
+    }
+  }
+  .heading {
+    @include heading;
+    color: $golden;
+    padding: 0;
+  }
+
+  .img {
+    margin-top: 17px;
+    .img__in {
+      position: relative;
+      text-align: center;
+      img {
+        max-width: 75%;
+        margin: 0 auto;
+      }
+      .title {
+        font-family: $roboto;
+        border: 1px solid $black;
+        text-align: center;
+        background: #3b3a39;
+        text-transform: capitalize;
+        position: relative;
+        top: -30px;
+
+        span {
+          color: #ddd;
+          font-size: 12px;
+        }
+        h4 {
+          color: $white;
+          font-size: 12px;
+          font-weight: 400;
+          margin-bottom: 0px;
+          padding: 5px;
+        }
+      }
+    }
+  }
+} //why__us

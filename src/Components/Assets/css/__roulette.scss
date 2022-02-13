@@ -1,0 +1,34 @@
+@import "__variable";
+
+// ****************** Banner start ********************
+.cards {
+  .card__banner {
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+
+  // abs
+  .abs {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    h3 {
+      color: $white;
+      font-family: $hekouFont;
+      font-size: 38px;
+    }
+    span {
+      text-transform: capitalize;
+      font-size: 16px;
+      color: $white;
+    }
+  }
+}
+
+.form-control:focus {
+  background-color: transparent;
+  border-color: transparent;
+  outline: 0;
+  box-shadow: 0 0 0 0rem transparent;
+}

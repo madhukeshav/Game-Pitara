@@ -1,0 +1,107 @@
+@import "__variable";
+
+// ****************** Banner start ********************
+.cards {
+  .card__banner {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    margin-top: 75px;
+    @include tab {
+      margin-top: 58px !important;
+      background-color: $darkBlack;
+    }
+  }
+
+  // abs
+  .abs {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    h3 {
+      color: $white;
+      font-family: $hekouFont;
+      font-size: 38px;
+    }
+    span {
+      text-transform: capitalize;
+      font-size: 16px;
+      color: $white;
+    }
+  }
+
+  // games__part start
+  .games__part {
+    background: $black;
+    .container {
+      position: relative;
+      top: 0px;
+      padding: 0px 0;
+      background: $black;
+      @include tab {
+        top: 0px;
+      }
+    }
+
+    // in__games
+    .in__games {
+      ul {
+        padding: 0;
+        margin: 0;
+        box-shadow: -6px 2px 17px -10px #000;
+        li {
+          list-style: none;
+          &:first-child {
+            a {
+              background: #000;
+              margin-top: 0;
+              color: $golden;
+            }
+          }
+          a {
+            color: $white;
+            padding: 20px 40px;
+            font-size: $menuFont;
+            margin: 10px 0;
+            display: block;
+
+            img {
+              margin-right: 5px;
+              width: 30px;
+            }
+          }
+        }
+      }
+    } // in__games
+    .game_card_section {
+      padding-left: 0px;
+      @include tab {
+        padding: 0px;
+        padding-top: 60px;
+      }
+      .Game_gridview {
+        margin-left: 0px;
+        @include tab {
+          margin: auto;
+          padding-left: 0px;
+        }
+      }
+    }
+
+    // games_image
+    .games_image {
+      padding: 0 30px 0 0;
+      margin-top: 30px;
+      img {
+        margin: 20px 0;
+      }
+    }
+  } //games__part
+}
+
+.form-control:focus {
+  background-color: transparent;
+  border-color: transparent;
+  outline: 0;
+  box-shadow: 0 0 0 0rem transparent;
+}
