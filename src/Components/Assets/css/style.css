@@ -646,6 +646,10 @@
   padding: 10px;
 }
 
+.home .winning .threeTrust .slick-slider {
+  width: 100%;
+}
+
 .home .winning .threeTrust__section {
   background: #000;
   border-radius: 20px;
@@ -700,6 +704,12 @@
     padding: 0px;
     margin-top: 16px;
     margin-bottom: 100px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .home .winning .videoSectionFooter {
+    margin-bottom: 20px;
   }
 }
 
@@ -2343,6 +2353,10 @@
   margin: 30px auto 0 auto;
 }
 
+.experience .images .slick-slider {
+  width: 100%;
+}
+
 .experience .images .images__in {
   position: relative;
   text-align: center;
@@ -2364,6 +2378,13 @@
 .experience .images .images__in .infoSection p {
   margin-bottom: 0px;
   font-size: 12px;
+}
+
+@media only screen and (max-width: 576px) {
+  .experience .images .images__in .infoSection {
+    position: relative;
+    bottom: 0;
+  }
 }
 
 .experience .images .images__in a {
@@ -2472,6 +2493,12 @@
   height: 100px;
 }
 
+@media only screen and (max-width: 576px) {
+  .gameprovider .sliders img {
+    height: auto;
+  }
+}
+
 .gameprovider .sliders div {
   margin-right: 10px;
   margin-left: 10px;
@@ -2484,6 +2511,17 @@
   }
   .gameprovider .sliders .slick-track {
     width: 9000px !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .gameprovider .sliders .slick-track {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -2722,6 +2760,12 @@ footer .container .row {
   width: max-content;
   text-align: left;
   margin-left: 0px;
+}
+
+@media only screen and (max-width: 576px) {
+  .btm__footer .foot.mobile-padding {
+    padding: 0 0 20px;
+  }
 }
 
 .btm__footer .last p {

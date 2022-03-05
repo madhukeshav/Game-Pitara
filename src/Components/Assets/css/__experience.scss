@@ -30,6 +30,9 @@
     // margin-top: 60px;
     width: 100%;
     margin: 30px auto 0 auto;
+    .slick-slider{
+      width:100%
+    }
     .images__in {
       position: relative;
       text-align: center;
@@ -46,6 +49,10 @@
         p {
           margin-bottom: 0px;
           font-size: 12px;
+        }
+        @include phone{
+          position: relative;
+          bottom:0;
         }
       }
       a {

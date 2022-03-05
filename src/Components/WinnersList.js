@@ -17,14 +17,22 @@ import Carousel from 'react-bootstrap/Carousel'
 const WinnersList = (props) => {
   let settings = {
     dots: false,
-    infinite: true,
-    loop: true,
-    speed: 1500,
     slidesToShow: 3,
-    autoplay: true,
     arrows: false,
-    slidesToScroll: 1,
-    vertical: true
+    slidesToScroll: 3,
+    vertical: false,
+    infinite: true,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          swipeToSlide: true
+        }
+      }
+    ]
   };
   return (
     <div>
@@ -49,7 +57,7 @@ const WinnersList = (props) => {
                       </span>
                       <p>
                         Gamepitara is home to the best online casino,
-                        sports betting and entertainment games.<br /><br /><br /><br />
+                        sports betting and entertainment games.
                       </p>
                     </div>
                   </div>
@@ -63,27 +71,29 @@ const WinnersList = (props) => {
             </div>
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 pl-5 mobilep-0">
               <div className="row threeTrust">
-                <div className="col-sm-4 threeTrust-col">
-                  <div className="threeTrust__section">
-                    <img src={Vector_Smart_Object} alt="3 security" />
-                    <p className="threeTrust__section__p1">Instant</p>
-                    <p className="threeTrust__section__p2">Withdrawal</p>
+                <Slider {...settings}>
+                  <div className="col-sm-12 threeTrust-col">
+                    <div className="threeTrust__section">
+                      <img src={Vector_Smart_Object} alt="3 security" />
+                      <p className="threeTrust__section__p1">Instant</p>
+                      <p className="threeTrust__section__p2">Withdrawal</p>
+                    </div>
                   </div>
-                </div>
-                <div className="col-sm-4 threeTrust-col">
-                  <div className="threeTrust__section">
-                    <img src={Vector_Smart_Object_2} alt="3 security" />
-                    <p className="threeTrust__section__p1">Instant</p>
-                    <p className="threeTrust__section__p2">Withdrawal</p>
+                  <div className="col-sm-12 threeTrust-col">
+                    <div className="threeTrust__section">
+                      <img src={Vector_Smart_Object_2} alt="3 security" />
+                      <p className="threeTrust__section__p1">Instant</p>
+                      <p className="threeTrust__section__p2">Withdrawal</p>
+                    </div>
                   </div>
-                </div>
-                <div className="col-sm-4 threeTrust-col">
-                  <div className="threeTrust__section">
-                    <img src={Vector_Smart_Object_3} alt="3 security" />
-                    <p className="threeTrust__section__p1">Instant</p>
-                    <p className="threeTrust__section__p2">Withdrawal</p>
+                  <div className="col-sm-12 threeTrust-col">
+                    <div className="threeTrust__section">
+                      <img src={Vector_Smart_Object_3} alt="3 security" />
+                      <p className="threeTrust__section__p1">Instant</p>
+                      <p className="threeTrust__section__p2">Withdrawal</p>
+                    </div>
                   </div>
-                </div>
+                </Slider>
               </div>
               <div className="row paymentAccept">
                 <h3 className="paymentAccept__heading">Payments and withdrawals</h3>

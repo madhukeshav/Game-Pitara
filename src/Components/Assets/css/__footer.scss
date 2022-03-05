@@ -175,6 +175,11 @@ footer {
       text-align: left;
       margin-left: 0px;
     }
+    @include phone{
+      &.mobile-padding{
+        padding:0 0 20px;
+      }
+    }
   }
   .last {
     p {

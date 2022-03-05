@@ -279,6 +279,9 @@
       .threeTrust-col {
         padding: 10px;
       }
+      .slick-slider{
+        width:100%;
+      }
       &__section {
         background: #000;
         border-radius: 20px;
@@ -319,6 +322,9 @@
         padding: 0px;
         margin-top: 16px;
         margin-bottom: 100px;
+      }
+      @include phone {
+        margin-bottom:20px;
       }
       img {
         width: 100%;

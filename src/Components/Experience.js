@@ -1,5 +1,5 @@
 import React from "react";
-
+import Slider from "react-slick";
 import img1 from "./Assets/img/experience/imag-1.png";
 import img2 from "./Assets/img/experience/imag-2.png";
 import img3 from "./Assets/img/experience/imag-3.png";
@@ -16,6 +16,26 @@ import rpb from "./Assets/img/rpb.png";
 import level from "./Assets/img/level.png";
 
 const Experience = (props) => {
+  let settings = {
+    dots: false,
+    slidesToShow: 4,
+    arrows: false,
+    slidesToScroll: 4,
+    vertical: false,
+    infinite: true,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          swipeToSlide: true
+        }
+      }
+    ]
+  };
+
   return (
     <div className="experience">
       <div className="container">
@@ -25,43 +45,44 @@ const Experience = (props) => {
         </div>
         <div className="images">
           <div className="row">
-            <div className="col-sm-3 mb-5">
-              <div className="images__in">
-                <img src={img1} className="img-fluid" alt="" />
-                <div className="infoSection">
-                  <Link to="#">Vikings Unleashed</Link>
-                  <p>Blueprint Gaming</p>
+            <Slider {...settings}>
+              <div className="col-sm-12 mb-5">
+                <div className="images__in">
+                  <img src={img1} className="img-fluid" alt="" />
+                  <div className="infoSection">
+                    <Link to="#">Vikings Unleashed</Link>
+                    <p>Blueprint Gaming</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-sm-3 mb-5">
-              <div className="images__in">
-                <img src={img2} className="img-fluid" alt="" />
-                <div className="infoSection">
-                  <Link to="#">Naughty Girls Cabaret</Link>
-                  <p>Evoplay Gaming</p>
+              <div className="col-sm-12 mb-5">
+                <div className="images__in">
+                  <img src={img2} className="img-fluid" alt="" />
+                  <div className="infoSection">
+                    <Link to="#">Naughty Girls Cabaret</Link>
+                    <p>Evoplay Gaming</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-sm-3 mb-5">
-              <div className="images__in">
-                <img src={img3} className="img-fluid" alt="" />
-                <div className="infoSection">
-                  <Link to="#">GamingJaguar Gold</Link>
-                  <p>Skywind Gaming</p>
+              <div className="col-sm-12 mb-5">
+                <div className="images__in">
+                  <img src={img3} className="img-fluid" alt="" />
+                  <div className="infoSection">
+                    <Link to="#">GamingJaguar Gold</Link>
+                    <p>Skywind Gaming</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-sm-3 mb-5">
-              <div className="images__in">
-                <img src={img4} className="img-fluid" alt="" />
-                <div className="infoSection">
-                  <Link to="#">Vikings Unleashed</Link>
-                  <p>Blueprint Gaming</p>
+              <div className="col-sm-12 mb-5">
+                <div className="images__in">
+                  <img src={img4} className="img-fluid" alt="" />
+                  <div className="infoSection">
+                    <Link to="#">Vikings Unleashed</Link>
+                    <p>Blueprint Gaming</p>
+                  </div>
                 </div>
               </div>
-            </div>
-
+            </Slider>
           </div>
         </div>
       </div>
