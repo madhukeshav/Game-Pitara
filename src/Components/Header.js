@@ -36,6 +36,7 @@ const Header = () => {
         setOpen("");
         setStatus("open");
         break;
+      default:
     }
   };
 
@@ -49,6 +50,7 @@ const Header = () => {
         setOpen("");
         setStatus("open");
         break;
+        default:
     }
   };
   return (
@@ -213,7 +215,7 @@ const Header = () => {
           <h3>{text}</h3>
           <i className="fa fa-close" onClick={handleClose}></i>
         </div>
-        <LoginSignup sign={text === "sign in"} signup={text === "Register Now"} />
+        <LoginSignup setOpen={handleShow} sign={text === "sign in"} signup={text === "Register Now"} />
       </div>
     </header>
   );

@@ -12,6 +12,7 @@
       background: $black;
       top: 0px;
       left: 15px;
+      display:none !important;
       padding-bottom: 30px;
       @include tab {
         width: auto;

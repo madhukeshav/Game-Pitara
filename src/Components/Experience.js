@@ -38,7 +38,7 @@ const Experience = (props) => {
 
   return (
     <div className="experience">
-      <div className="container">
+      <div className="container-fluid">
         <div className="heading">
           <h3 className="mb-0">Experience our games</h3>
           <span>Sit back relax and be amazed by our games today.</span>

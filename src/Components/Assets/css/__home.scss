@@ -184,6 +184,11 @@
       background: url(../img/winning/backgound.jpg) center center;
       padding: 0px 0px;
     }
+    @include phone {
+      .carousel{
+        margin-top:0;
+      }
+    }
     &#winners {
       background: url("../img/why/background.jpg") no-repeat center center;
       .video {
@@ -354,11 +359,11 @@
       }
     }
     .home-winnerSlider {
-      background-size: cover !important;
+      background-size: 100% !important;
       padding: 0;
       background-color: #1d1d1d;
       background-position: center;
-      height: 210px;
+      height: 27vh;
       border-radius: 10px;
     }
     .home-winnerSlider_img_1 {

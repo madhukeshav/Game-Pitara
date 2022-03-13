@@ -531,6 +531,12 @@
   }
 }
 
+@media only screen and (max-width: 576px) {
+  .home .winning .carousel {
+    margin-top: 0;
+  }
+}
+
 .home .winning#winners {
   background: url("../img/why/background.jpg") no-repeat center center;
 }
@@ -751,11 +757,11 @@
 }
 
 .home .winning .home-winnerSlider {
-  background-size: cover !important;
+  background-size: 100% !important;
   padding: 0;
   background-color: #1d1d1d;
   background-position: center;
-  height: 210px;
+  height: 27vh;
   border-radius: 10px;
 }
 
@@ -2026,19 +2032,15 @@
   }
 }
 
-.why .lowerBanner__slider {
-  height: 175px !important;
-}
-
 .why .lowerBanner__singleGame {
   width: 100%;
-  height: 175px;
+  height: 100%;
   border-radius: 15px;
 }
 
 .why .lowerBanner__doubleGame {
   width: 100%;
-  height: 175px;
+  height: 100%;
   border-radius: 15px;
 }
 
@@ -2276,10 +2278,6 @@
           box-shadow: 2px 0px 17px -7px #ffda78;
 }
 
-.lowerBanner__row {
-  padding: 0px 15px !important;
-}
-
 @media only screen and (max-width: 768px) {
   .lowerBanner__row {
     padding: 0px 0px !important;
@@ -2364,6 +2362,7 @@
 
 .experience .images .images__in img {
   border-radius: 20px;
+  width: 100%;
 }
 
 .experience .images .images__in .infoSection {
@@ -2913,6 +2912,14 @@ header .navbar .navbar-brand .barnotification button i {
   font-size: 14px;
 }
 
+@media only screen and (max-width: 576px) {
+  header .navbar .mobileUserName h4 {
+    color: #fff;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
 header .navbar-brand img {
   max-width: 150px;
 }
@@ -2933,6 +2940,14 @@ header .navbar-nav {
           align-items: center;
   margin-left: 60px;
   font-family: "Roboto", sans-serif;
+}
+
+@media only screen and (max-width: 576px) {
+  header .navbar-nav {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
+  }
 }
 
 header .navbar-nav .wallet img {
@@ -3208,6 +3223,44 @@ header .navbar-nav i {
           flex-direction: row !important;
 }
 
+@media only screen and (max-width: 576px) {
+  .userDropdown .dropdown-toggle {
+    display: none;
+  }
+  .userDropdown .dropdown-toggle:after {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .userDropdown {
+    position: static;
+  }
+  .userDropdown .dropdown-menu {
+    width: 50%;
+    margin-left: 0 !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 0;
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+    display: initial;
+    padding: 40px 20px;
+    visibility: hidden;
+  }
+  .userDropdown .dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    height: 100vh;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
 .balanceOnHeader {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3289,6 +3342,17 @@ header .navbar-nav i {
   .mobileNavBottom a img {
     max-width: 100%;
     width: 25px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #offcanvasNavbar.collapse:not(.show) {
+    display: initial;
+  }
+  .collapsing {
+    position: static;
+    height: 100%;
+    overflow: visible;
   }
 }
 
@@ -3446,6 +3510,7 @@ header .navbar-nav i {
   background: #151515;
   top: 0px;
   left: 15px;
+  display: none !important;
   padding-bottom: 30px;
 }
 

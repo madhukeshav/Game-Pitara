@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Redirect, useHistory } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown, Accordion, Card } from "react-bootstrap";
 import logo from "./Assets/img/logo.png";
@@ -23,21 +23,28 @@ import Slots from './Assets/img/icons/slots.png'
 import logoWithoutName from './Assets/img/Logo-footer.svg'
 
 
+const getIsMobile = () => window.innerWidth <= 768;
 
 const LoggedHeader = () => {
   let history = useHistory();
+  const ref = useRef();
   const [user, setUser] = useState();
   const [active, setActive] = useState("")
   const [profile, setProfile] = useState({})
   const [accountBalance, setAccountBalance] = useState("0.00")
+  const [clickBody , setClickBody] = useState(false);
+
   // let auth = localStorage.getItem("auth")
+
   const handleOpen = () => {
     setActive("active")
   }
+
   //handleClose
   const handleClose = () => {
     setActive("")
   }
+
   const redirectPage = (value) => {
     localStorage.setItem("pageName", value);
   }
@@ -54,6 +61,8 @@ const LoggedHeader = () => {
       handleLogout();
     }
   }
+
+  
   const getProfile = () => {
     fetch("https://api.gamepitara.com/api/v1/users/get-profile-details", {
       method: "GET",
@@ -82,19 +91,39 @@ const LoggedHeader = () => {
     setAccountBalance(getAccountBalanceRound)
   }
 
-
-
   useEffect(() => {
     checkAuth()
     getProfile();
     getBalance();
+    return () => {
+        document.body.classList.remove('open')
+    }
+    
   }, [])
+
+  useEffect(() => {
+    const x = document.querySelector('.userDropdown').classList.contains('show')
+    console.log(x)
+    if(clickBody){
+      document.body.classList.add('open')
+    }else
+      document.body.classList.remove('open')
+  },[clickBody])
+
+  const onClickHandler = () => {
+    ref.current.firstChild.click();
+    if(clickBody)
+      setClickBody(false)
+    else
+      setClickBody(true)
+  }
+
   return (
     <header>
       <Navbar expand="lg">
         <div className="container">
           <Navbar.Brand>
-            <Link to="/home">
+            <Link to="/">
               <img src={logo} alt="logo" className="logedin_logo desktop_only" />
             </Link>
             <Link to="/" alt="logo" className="logedin_logo mobile_only">
@@ -110,7 +139,7 @@ const LoggedHeader = () => {
             </div> */}
 
           </Navbar.Brand>
-          <div className="mobile_only">
+          <div className="mobile_only ml-auto mr-1">
             <Nav className="ml-auto">
               <Nav.Link>
                 <div className="balanceOnHeader">
@@ -123,8 +152,11 @@ const LoggedHeader = () => {
               </Nav.Link>
             </Nav>
           </div>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <div className="d-flex mobileUserName align-items-center">
+            <h4 className='d-block d-sm-none'>{user?.username ? user.username : "User"}</h4>
+            <Navbar.Toggle onClick={onClickHandler} aria-controls="offcanvasNavbar" />
+          </div>
+          <Navbar.Collapse id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" placement="end">
             <Nav className="ml-auto">
               <Nav.Link className="desktop_only">
                 <Link to="/">
@@ -192,9 +224,59 @@ const LoggedHeader = () => {
                 </div>
               </Nav.Link>
               {/* <NavDropdown className="userDropdown" title="user" id="basic-nav-dropdown"> */}
-              <NavDropdown className="userDropdown" title={user?.username ? user.username : "User"} id="basic-nav-dropdown">
+              <NavDropdown ref={ref} className={`userDropdown`} title={user?.username ? user.username : "User"} id="basic-nav-dropdown">
+                <Nav className="d-flex m-0 d-sm-none">
+                  <Nav.Link>
+                    <Link to="/">
+                      <img src={home} alt="home" />
+                      home
+                    </Link>
+                  </Nav.Link>
+                  <Nav.Link>
+                    <Link to="/cards">
+                      <img src={cards} alt="home" />
+                      Cards
+                    </Link>
+                  </Nav.Link>
+                  <Nav.Link>
+                    <Link to="/roulette">
+                      <img src={roullete} alt="home" />
+                      roulette
+                    </Link>
+                  </Nav.Link>
+                  <Nav.Link>
+                    <Link to="/pocker">
+                      <img src={poker} alt="home" />
+                      poker
+                    </Link>
+                  </Nav.Link>
+                  <Nav.Link>
+                    <Link to="/fastgame">
+                      <img src={jackpot} alt="Fast Game" />
+                      Fast Games
+                    </Link>
+                  </Nav.Link>
+                  <Nav.Link>
+                    <Link to="/sports">
+                      <img src={Sports} alt="Sports" />
+                      Sports
+                    </Link>
+                  </Nav.Link>
+                  <Nav.Link>
+                    <img src={livedealer} alt="home" />
+                    <Link to="">live dealers</Link>
+                  </Nav.Link>
+                  <Nav.Link className="desktop_only">
+                    <Link to="/sports">
+                      <img src={Slots} alt="Sports" />
+                      Slots
+                    </Link>
+                  </Nav.Link>
+                </Nav>
+                <NavDropdown.Divider className="d-block d-sm-none" />
+              
                 <NavDropdown.Item onClick={redirectPage("wallet")}>
-                  <Link         >
+                  <Link to="/wallet">
                     <img src={walletYellow} alt="" />
                     Wallet
                   </Link>

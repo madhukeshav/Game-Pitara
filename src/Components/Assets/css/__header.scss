@@ -70,6 +70,15 @@ header {
         }
       }
     }
+    @include phone{
+      .mobileUserName{
+        h4{
+          color:#fff;
+          font-size:14px;
+          margin:0;
+        }
+      }
+    }
   }
   .navbar-brand {
     .logedin_logo {
@@ -88,6 +97,9 @@ header {
     align-items: center;
     margin-left: 60px;
     font-family: $roboto;
+    @include phone{
+      align-items: end;
+    }
     .wallet {
       img {
         display: block;
@@ -312,6 +324,35 @@ header {
 .userDropdown {
   .dropdown-toggle {
     flex-direction: row !important;
+    @include phone{
+      display:none;
+      &:after{
+        display:none;
+      }
+    }
+  }
+  @include phone{
+    position: static;
+    .dropdown-menu{
+      width:50%;
+      margin-left: 0 !important;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 0;
+      opacity: 0;
+      transform: translateX(-100px);
+      transition: 0.6s;
+      display: initial;
+      padding:40px 20px;
+      visibility: hidden;
+      &.show{
+        opacity: 1;
+        visibility: visible;
+        height:100vh;
+        transform: translateX(0px);
+      }
+    }
   }
 }
 
@@ -368,5 +409,17 @@ header {
         width: 25px;
       }
     }
+  }
+}
+
+
+@include phone{
+  #offcanvasNavbar.collapse:not(.show){
+    display: initial;
+  }
+  .collapsing{
+    position: static;
+    height:100%;
+    overflow: visible;
   }
 }

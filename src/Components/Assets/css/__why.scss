@@ -24,17 +24,17 @@
     }
   }
   .lowerBanner {
-    &__slider {
-      height: 175px !important;
-    }
+    // &__slider {
+    //   height: 175px !important;
+    // }
     &__singleGame {
       width: 100%;
-      height: 175px;
+      height: 100%;
       border-radius: 15px;
     }
     &__doubleGame {
       width: 100%;
-      height: 175px;
+      height: 100%;
       border-radius: 15px;
     }
     .carousel {
@@ -236,9 +236,6 @@
 }
 .lowerBanner__doubleGame {
   box-shadow: 2px 0px 17px -7px #ffda78;
-}
-.lowerBanner__row {
-  padding: 0px 15px !important;
 }
 
 @include tab {

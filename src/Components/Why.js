@@ -138,9 +138,9 @@ const Why = (props) => {
 
     <div className="why" id="afterTop">
 
-      <div className="container">
+      <div className="container-fluid">
         <div className="winning whyWinner lowerBanner">
-          <div className="container pr-0 mb-3">
+          <div className="container-fluid mb-3">
             <div className="row lowerBanner__row">
               <div className="col-xs-8 col-sm-8 col-md-12 col-lg-5 col-xl-5 pl-0 mb-3 mobilep-0 lowerBanner__mobile">
                 <div className="">

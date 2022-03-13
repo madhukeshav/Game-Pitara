@@ -223,7 +223,7 @@ const LoginSignup = (props) => {
           <div className="accout">
             <img src={user} alt="" />
             <p>no account yet?</p>
-            <Link to="" >create an account</Link>
+            <p onClick={props.setOpen}>create an account</p>
           </div>
         </>
       ) : props.signup ? (
